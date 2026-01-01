@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Cinematic Video Prompt Generator</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      width: 420px;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+    }
+    input, select, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 14px;
+    }
+    button {
+      background: #00ffd5;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 10px;
+      background: #000;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>🎬 AI Video Prompt Generator</h2>
+
+  <input id="topic" placeholder="Enter topic (ex: rooster waiting)" />
+
+  <select id="mood">
+    <option value="cinematic">Cinematic</option>
+    <option value="emotional">Emotional</option>
+    <option value="calm">Calm</option>
+    <option value="dramatic">Dramatic</option>
+  </select>
+
+  <button onclick="generatePrompt()">Generate Prompt</button>
+
+  <textarea id="output" placeholder="Your AI prompt will appear here..."></textarea>
+</div>
+
+<script>
+function generatePrompt() {
+  const topic = document.getElementById("topic").value;
+  const mood = document.getElementById("mood").value;
+
+const prompt = `
+A ${mood} AI-generated cinematic video showing ${topic}.
+Stylized visuals with soft lighting and smooth motion.
+Dreamy atmosphere, clearly artificial AI-created look.
+Slow camera movement, emotional tone, perfect for short-form video.
+No humans, no text.
+`;
+  document.getElementById("output").value = prompt;
+}
+</script>
+
+</body>
+</html>
